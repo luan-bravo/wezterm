@@ -1,8 +1,5 @@
 local wt_ok, wt = pcall(require, "wezterm")
-if not wt_ok then
-    wt.log_error("[wezterm] PANIC: failed to run `wezterm.config_builder`.")
-    return
-end
+if not wt_ok then return end
 
 local conf_ok, config = pcall(wt.config_builder)
 if not conf_ok then
@@ -45,18 +42,18 @@ else
     -- local keys = dofile("/home/lul/.config/wezterm/default_keys.lua")
     -- config.keys = keys.keys
     -- config.key_tables = keys.key_tables
+    local vim_ok, vim = pcall(require, "vim")
+    if not vim_ok then
+        wt.log_error("[wezterm] ERROR: failed to require vim keybindings")
+    end
+    vim.apply_to_config(config)
+
     local keys_ok, keys = pcall(require, "default_keys")
     if not keys_ok then
-        keys.log_error("[wezterm] ERROR: failed to require default_keys")
+        wt.log_error("[wezterm] ERROR: failed to require default_keys")
     end
     keys.apply_to_config(config)
 
     -- VI MOTIONS KEY BINDINGS local vim = require('vim')
-    local vim_ok, vim = pcall(require, "vim")
-    if not vim_ok then
-        keys.log_error("[wezterm] ERROR: failed to require vim keybindings")
-    end
-    vim.apply_to_config(config)
-
     return config
 end
