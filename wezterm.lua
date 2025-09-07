@@ -1,11 +1,9 @@
-local wt_ok, wt = pcall(require, "wezterm")
-if not wt_ok then return end
+WT = require("wezterm")
 
-local conf_ok, config = pcall(wt.config_builder)
+local conf_ok, config = pcall(WT.config_builder)
 if not conf_ok then
-    wt.log_error("[wezterm] failed to run `wezterm.config_builder`.")
+    WT.log_error("[wezterm] failed to run `wezterm.config_builder`.")
 else
-
     -- GENERAL
     config.enable_wayland = true
     config.max_fps = 120
@@ -21,9 +19,9 @@ else
 
     -- APPEARANCE
     config.color_scheme = "GruvboxDark"
-    config.font = wt.font_with_fallback({
-        "Hasklug Nerd Font", -- || ++ <-> <+> <=> <>
-        "Noto Color Emoji", -- 😎 🇧🇷 🏎️
+    config.font = WT.font_with_fallback({
+        "Hasklug Nerd Font",
+        "Noto Color Emoji",
     })
     config.font_size = 15
 
@@ -42,18 +40,16 @@ else
     -- local keys = dofile("/home/lul/.config/wezterm/default_keys.lua")
     -- config.keys = keys.keys
     -- config.key_tables = keys.key_tables
-    local vim_ok, vim = pcall(require, "vim")
-    if not vim_ok then
-        wt.log_error("[wezterm] ERROR: failed to require vim keybindings")
-    end
-    vim.apply_to_config(config)
 
-    local keys_ok, keys = pcall(require, "default_keys")
-    if not keys_ok then
-        wt.log_error("[wezterm] ERROR: failed to require default_keys")
-    end
-    keys.apply_to_config(config)
+
+
+
+    config.keys = {} -- Use no default keys
+    config.keys = require("keys.init")
+    -- config.keys = require("keys.keys")
 
     -- VI MOTIONS KEY BINDINGS local vim = require('vim')
-    return config
+    -- config.keys = require("keys.init")
 end
+
+return config
