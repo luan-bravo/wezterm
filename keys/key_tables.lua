@@ -1,3 +1,4 @@
+local act = WT.actions
 local key_tables = {
     copy_mode = {
         { key = "Tab", mods = "NONE", action = act.CopyMode "MoveForwardWord" },
