@@ -1,14 +1,14 @@
-local wt = require("wezterm")
 local k = {}
 
+local modules = {
+    "vim",
+    "keys",
+    -- "key_tables",
+}
 
-function ApplyKeys(mod, keys)
-    for _, key in ipairs(mod) do
-        table.insert(keys, key)
-    end
+for _, m in ipairs(modules) do
+    local mod = require("keys." .. m)
+    table.move(mod, 1, #mod, #k + 1, k) -- Fuse table mod's items with table keys
 end
-
-ApplyKeys(require("keys.vim"), k)
-ApplyKeys(require("keys.keys"), k)
 
 return k

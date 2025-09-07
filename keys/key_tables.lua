@@ -75,4 +75,7 @@ local key_tables = {
         { key = "PageDown", mods = "NONE", action = act.CopyMode "NextMatchPage" },
         { key = "UpArrow", mods = "NONE", action = act.CopyMode "PriorMatch" },
         { key = "DownArrow", mods = "NONE", action = act.CopyMode "NextMatch" },
-    },
+    }
+}
+
+-- return key_tables
