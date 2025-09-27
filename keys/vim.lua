@@ -16,4 +16,8 @@ return {
 
     { key = ",", mods = "ALT", action = act.CopyMode "JumpReverse" },
     { key = ";", mods = "ALT", action = act.CopyMode "JumpAgain" },
+
+    { key = "u", mods = "ALT", action = act.ScrollByPage(-1) },
+    { key = "d", mods = "ALT", action = act.ScrollByPage(1) },
 }
+
