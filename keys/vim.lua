@@ -6,6 +6,11 @@ return {
     { key = "k", mods = "ALT", action = act.ActivatePaneDirection "Up" },
     { key = "l", mods = "ALT", action = act.ActivatePaneDirection "Right" },
 
+    { key = "h", mods = "ALT|CTRL", action = act.AdjustPaneSize { "Left", 1 } },
+    { key = "j", mods = "ALT|CTRL", action = act.AdjustPaneSize { "Down", 1 } },
+    { key = "k", mods = "ALT|CTRL", action = act.AdjustPaneSize { "Up", 1 } },
+    { key = "l", mods = "ALT|CTRL", action = act.AdjustPaneSize { "Right", 1 } },
+
     { key = "n", mods = "ALT", action = act.ActivateTabRelative(1) },
     { key = "p", mods = "ALT", action = act.ActivateTabRelative(-1) },
 

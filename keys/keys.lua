@@ -18,10 +18,6 @@ return {
     { key = "%", mods = "ALT", action = act.SplitHorizontal{ domain =  "CurrentPaneDomain" } },
     { key = "t", mods = "ALT", action = act.SpawnTab "CurrentPaneDomain" },
 
-    { key = "h", mods = "CTRL|ALT", action = act.AdjustPaneSize{ "Left", 1 } },
-    { key = "j", mods = "CTRL|ALT", action = act.AdjustPaneSize{ "Down", 1 } },
-    { key = "k", mods = "CTRL|ALT", action = act.AdjustPaneSize{ "Up", 1 } },
-    { key = "l", mods = "CTRL|ALT", action = act.AdjustPaneSize{ "Right", 1 } },
 
 
 
