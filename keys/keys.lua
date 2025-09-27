@@ -15,10 +15,14 @@ return {
 
 
     -- Panes
-    { key = "t", mods = "ALT", action = act.SpawnTab "CurrentPaneDomain" },
     { key = "%", mods = "ALT", action = act.SplitHorizontal { domain =  "CurrentPaneDomain" } },
+    { key = "t", mods = "ALT|SHIFT", action = act.SpawnTab("CurrentPaneDomain" ) },
 
 
+    -- Clipboard
+    { key = "c", mods = "ALT|SHIFT", action = act.CopyTo("Clipboard") },
+    { key = "v", mods = "ALT|SHIFT", action = act.PasteFrom("Clipboard") },
+    -- { key = "c", mods = "ALT|CTRL", action = act.ActivateCopyMode },
 
 
     -- Font
@@ -27,37 +31,14 @@ return {
     { key = ")", mods = "ALT", action = act.ResetFontSize },
 
 
-    -- Clipboard
-    { key = "c", mods = "ALT", action = act.CopyTo "Clipboard" },
-
+    { key = "z", mods = "ALT|SHIFT", action = act.TogglePaneZoomState }, -- ?
 
     -- Text / Navigation
-    { key = "PageUp", mods = "ALT", action = act.ScrollByPage(-1) },
-    { key = "PageDown", mods = "ALT", action = act.ScrollByPage(1) },
-
+    { key = "PageUp", mods = "ALT|CTRL", action = act.ScrollByPage(-1) },
+    { key = "PageDown", mods = "ALT|CTRL", action = act.ScrollByPage(1) },
 
     -- Controls
     { key = "Enter", mods = "ALT", action = act.ToggleFullScreen },
-    { key = "F", mods = "ALT", action = act.Search "CurrentSelectionOrEmptyString" },
-    --! { key = "K", mods = "ALT", action = act.ClearScrollback "ScrollbackOnly" },
-    { key = "L", mods = "ALT", action = act.ShowDebugOverlay },
-
-    { key = "M", mods = "ALT", action = act.Hide },
-    { key = "N", mods = "ALT", action = act.SpawnWindow },
-    { key = "P", mods = "ALT", action = act.ActivateCommandPalette },
-    { key = "R", mods = "ALT", action = act.ReloadConfiguration },
-    { key = "U", mods = "ALT", action = act.CharSelect{ copy_on_select = true, copy_to =  "ClipboardAndPrimarySelection" } },
-    { key = "V", mods = "ALT", action = act.PasteFrom "Clipboard" },
-    { key = "W", mods = "ALT", action = act.CloseCurrentTab{ confirm = true } },
-    --! { key = "X", mods = "ALT", action = act.ActivateCopyMode },
-    { key = "Z", mods = "ALT", action = act.TogglePaneZoomState }, -- ?
-
-
-    -- { key = "LeftArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Left" },
-    -- { key = "RightArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Right" },
-    -- { key = "UpArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Up" },
-    -- { key = "DownArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Down" },
-
     { key = "f", mods = "ALT|CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
     --! { key = "K", mods = "ALT|CTRL", action = act.ClearScrollback "ScrollbackOnly" },
     { key = "l", mods = "ALT|CTRL", action = act.ShowDebugOverlay },
