@@ -1,14 +1,18 @@
-local k = {}
-
-local modules = {
+local k = { }
+--
+local key_modules = {
     "vim",
     "keys",
     -- "key_tables",
 }
 
-for _, m in ipairs(modules) do
-    local mod = require("keys." .. m)
-    table.move(mod, 1, #mod, #k + 1, k) -- Fuse table mod's items with table keys
+--- Join keys modules' arrays
+for _, m in ipairs(key_modules)do
+	local kmod_ok, kmod = pcall(require, "keys."..m)
+	if not kmod_ok then
+		WT.log_error("[wezconf] error: failed to find keys module "..m)
+	else
+		PushArray(kmod, k)
+	end
 end
-
 return k

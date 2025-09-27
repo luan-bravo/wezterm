@@ -1,5 +1,10 @@
 WT = require("wezterm")
 
+--- Push all items from arr1 to the end of arr2
+function PushArray(arr1, arr2)
+	table.move(arr1, 1, #arr1, #arr2 + 1, arr2) --- Fuse table $1's items with $4
+end
+
 Conf_ok, Config = pcall(WT.config_builder)
 if not Conf_ok then
     WT.log_error("[wezterm] failed to run `wezterm.config_builder`.")
@@ -37,7 +42,6 @@ else
     Config.use_fancy_tab_bar = true
 
     -- KEYBINDINGS
-    Config.keys = {} -- Not use default keys
     Config.keys = require("keys.init")
 end
 
