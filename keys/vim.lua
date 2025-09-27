@@ -9,5 +9,6 @@ return {
     { key = "n", mods = "ALT", action = act.ActivateTabRelative(1) },
     { key = "p", mods = "ALT", action = act.ActivateTabRelative(-1) },
 
-    { key = "c", mods = "ALT", action = act.ActivateCopyMode },
+    { key = ",", mods = "ALT", action = act.CopyMode "JumpReverse" },
+    { key = ";", mods = "ALT", action = act.CopyMode "JumpAgain" },
 }
