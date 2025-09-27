@@ -3,7 +3,7 @@ local act = require("wezterm").action
 return {
     -- Tabs
     { key = "Tab", mods = "ALT", action = act.ActivateTabRelative(1) },
-    { key = "Tab", mods = "SHIFT|ALT", action = act.ActivateTabRelative(-1) },
+    { key = "Tab", mods = "ALT|SHIFT", action = act.ActivateTabRelative(-1) },
     { key = "1", mods = "ALT", action = act.ActivateTab(0) },
     { key = "2", mods = "ALT", action = act.ActivateTab(1) },
     { key = "3", mods = "ALT", action = act.ActivateTab(2) },
@@ -15,8 +15,8 @@ return {
 
 
     -- Panes
-    { key = "%", mods = "ALT", action = act.SplitHorizontal{ domain =  "CurrentPaneDomain" } },
     { key = "t", mods = "ALT", action = act.SpawnTab "CurrentPaneDomain" },
+    { key = "%", mods = "ALT", action = act.SplitHorizontal { domain =  "CurrentPaneDomain" } },
 
 
 
@@ -52,14 +52,26 @@ return {
     --! { key = "X", mods = "ALT", action = act.ActivateCopyMode },
     { key = "Z", mods = "ALT", action = act.TogglePaneZoomState }, -- ?
 
-    { key = "J", mods = "ALT", action = act.ActivateTabRelative(1) },
-    { key = "K", mods = "ALT", action = act.ActivateTabRelative(-1) },
 
     -- { key = "LeftArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Left" },
     -- { key = "RightArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Right" },
     -- { key = "UpArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Up" },
     -- { key = "DownArrow", mods = "SHIFT|ALT", action = act.ActivatePaneDirection "Down" },
 
-    { key = "C", mods = "SHIFT|ALT", action = act.CopyTo "Clipboard" },
-    { key = "V", mods = "SHIFT|ALT", action = act.PasteFrom "Clipboard" },
+    { key = "f", mods = "ALT|CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
+    --! { key = "K", mods = "ALT|CTRL", action = act.ClearScrollback "ScrollbackOnly" },
+    { key = "l", mods = "ALT|CTRL", action = act.ShowDebugOverlay },
+    { key = "m", mods = "ALT|CTRL", action = act.Hide },
+    { key = "n", mods = "ALT|CTRL", action = act.SpawnWindow },
+    { key = "p", mods = "ALT|CTRL", action = act.ActivateCommandPalette },
+    { key = "r", mods = "ALT|CTRL", action = act.ReloadConfiguration },
+    { key = "u", mods = "ALT|CTRL", action = act.CharSelect { copy_on_select = true, copy_to =  "ClipboardAndPrimarySelection" } },
+    { key = "v", mods = "ALT|CTRL", action = act.PasteFrom("Clipboard") },
+    { key = "w", mods = "ALT|CTRL", action = act.CloseCurrentTab { confirm = true } },
+    --! { key = "X", mods = "ALT|CTRL", action = act.ActivateCopyMode },
+
+    -- { key = "LeftArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection "Left" },
+    -- { key = "RightArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection "Right" },
+    -- { key = "UpArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection "Up" },
+    -- { key = "DownArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection "Down" },
 }

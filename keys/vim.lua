@@ -1,10 +1,10 @@
 local act = require("wezterm").action
 
 return {
-    { key = "h", mods = "ALT", action = act.ActivatePaneDirection "Left" },
-    { key = "j", mods = "ALT", action = act.ActivatePaneDirection "Down" },
-    { key = "k", mods = "ALT", action = act.ActivatePaneDirection "Up" },
-    { key = "l", mods = "ALT", action = act.ActivatePaneDirection "Right" },
+    { key = "h", mods = "ALT", action = act.ActivatePaneDirection("Left") },
+    { key = "j", mods = "ALT", action = act.ActivatePaneDirection("Down") },
+    { key = "k", mods = "ALT", action = act.ActivatePaneDirection("Up") },
+    { key = "l", mods = "ALT", action = act.ActivatePaneDirection("Right") },
 
     { key = "h", mods = "ALT|CTRL", action = act.AdjustPaneSize { "Left", 1 } },
     { key = "j", mods = "ALT|CTRL", action = act.AdjustPaneSize { "Down", 1 } },
