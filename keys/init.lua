@@ -1,9 +1,9 @@
 local k = { }
 --
 local key_modules = {
-    "vim",
-    "keys",
-    -- "key_tables",
+	"vim",
+	"keys",
+	-- "key_tables",
 }
 
 --- Join keys modules' arrays
