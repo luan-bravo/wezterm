@@ -1,10 +1,21 @@
-WT = require("wezterm")
+--- Fuse table1 onto table2
+function FuseTables(table1, table2)
+	if table1 == nil then
+		table1 = table2
+		return
+	else
+		for key, value in ipairs(table2) do
+			table1[key] = value
+		end
+	end
+end
 
 --- Push all items from arr1 to the end of arr2
 function PushArray(arr1, arr2)
 	table.move(arr1, 1, #arr1, #arr2 + 1, arr2) --- Fuse table $1's items with $4
 end
 
+WT = require("wezterm")
 Conf_ok, Config = pcall(WT.config_builder)
 if not Conf_ok then
     WT.log_error("[wezterm] failed to run `wezterm.config_builder`.")
