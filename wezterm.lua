@@ -44,7 +44,7 @@ else
 		"Hasklug Nerd Font",
 		"Noto Color Emoji",
 	})
-	Config.font_size = 13
+	Config.font_size = 11
 
 	-- Window
 	Config.window_decorations = "NONE"
