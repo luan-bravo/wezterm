@@ -35,7 +35,7 @@ else
 	}
 
 	-- Appearance
-	Config.color_scheme = "GruvboxDark"
+	Config.color_scheme = "GruvboxDarkHard"
 	-- TODO: Figure how to actually change the bg color
 	-- FuseTables(Config.colors, {
 	--	 background = "#282828",
