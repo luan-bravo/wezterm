@@ -30,8 +30,8 @@ else
 	Config.default_cursor_style = "SteadyBlock"
 	Config.term = "wezterm"
 	Config.set_environment_variables = {
-		TERM = "wezterm",
-		COLORTERM = "truecolor",
+		-- TERM = "wezterm",
+		-- COLORTERM = "truecolor",
 	}
 
 	-- Appearance
