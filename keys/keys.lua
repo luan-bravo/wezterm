@@ -41,7 +41,7 @@ return {
 	{ key = "Enter", mods = "ALT", action = act.ToggleFullScreen },
 	{ key = "f", mods = "ALT|CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
 	--! { key = "K", mods = "ALT|CTRL", action = act.ClearScrollback "ScrollbackOnly" },
-	{ key = "l", mods = "ALT|CTRL", action = act.ShowDebugOverlay },
+	{ key = "l", mods = "ALT|CTRL|SHIFT", action = act.ShowDebugOverlay },
 	{ key = "m", mods = "ALT|CTRL", action = act.Hide },
 	{ key = "n", mods = "ALT|CTRL", action = act.SpawnWindow },
 	{ key = "p", mods = "ALT|CTRL", action = act.ActivateCommandPalette },
