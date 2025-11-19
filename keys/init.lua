@@ -1,8 +1,8 @@
 local k = { }
 --
 local key_modules = {
-	"vim",
 	"keys",
+	"vim",
 	-- "key_tables",
 }
 
