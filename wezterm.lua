@@ -41,7 +41,9 @@ else
 	--	 background = "#282828",
 	-- })
 	Config.font = WT.font_with_fallback({
-		"Hasklug Nerd Font",
+		-- "Hasklug Nerd Font",
+		-- "SauceCodePro Nerd Font",
+		"JetBrainsMono Nerd Font",
 		"Noto Color Emoji",
 	})
 	Config.font_size = 13
